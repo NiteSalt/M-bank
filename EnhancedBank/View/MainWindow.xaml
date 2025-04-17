@@ -1,0 +1,34 @@
+﻿<Window x:Class="EnhancedBank.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EnhancedBank.View"
+        xmlns:models="clr-namespace:EnhancedBank.Model"
+        mc:Ignorable="d"
+        DataContext="{x:Type models:MainWindowModel}"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="12*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30px" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30px" />
+        </Grid.RowDefinitions>
+        
+        <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3">
+            <TextBlock Margin="20,0">Главное меню приложения</TextBlock>
+            <Button Click="OnExitButtonClick" Margin="20,0">Выход</Button>
+        </DockPanel>
+        
+        <StackPanel VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"> 
+            <Button Click="OnClientsButtonClick" Margin="20px" FontSize="15px">Клиенты</Button>
+            <Button Click="OnEmployeesButtonClick" Margin="20px" FontSize="15px">Сотрудники</Button>
+            <Button Click="OnAdministratorButtonClick" Margin="20px" FontSize="15px">Администратор</Button>
+        </StackPanel>
+    </Grid>
+</Window>
