@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -16,6 +16,8 @@ public partial class App
 	
 	public IServiceProvider ServiceProvider { get; }
 	
+	public BankDbContext Db { get; }
+
 	public App()
 	{
 		ServiceCollection sc = new();
@@ -23,5 +25,8 @@ public partial class App
 		sc.AddSqlite<BankDbContext>("Data Source=bank.db");
 
 		ServiceProvider = sc.BuildServiceProvider();
+
+
+		Db = ServiceProvider.GetRequiredService<BankDbContext>();
 	}
 }

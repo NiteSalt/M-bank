@@ -1,4 +1,6 @@
-﻿using System.Windows;
+using EnhancedBank.Model;
+using System.Runtime.Intrinsics.Arm;
+using System.Windows;
 
 namespace EnhancedBank.View;
 
@@ -19,16 +21,21 @@ public partial class AuthorizationWindow : Window
 
 	private void OnLoginButtonClick(object sender, RoutedEventArgs e)
 	{
-		string pass = passwordBox.Text;
 		string login = usernameBox.Text;
+		string password = passwordBox.Text;
 
-		if (login == "user" && pass == "pass2")
+		Employee? employee = App.Current.Db.Employees.Where(u => u.Name == password).Where(u => u.Password == password).FirstOrDefault();
+
+		if (employee is not null)
 		{
 			Window window = _windowFactory();
 
 			Hide();
 			window.ShowDialog();
 			Close();
+			return;
 		}
+
+		MessageBox.Show("Неправильное имя пользователя или пароль");
 	}
 }
