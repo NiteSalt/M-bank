@@ -25,8 +25,7 @@ public partial class App
 		sc.AddSqlite<BankDbContext>("Data Source=bank.db");
 
 		ServiceProvider = sc.BuildServiceProvider();
-
-
+		
 		Db = ServiceProvider.GetRequiredService<BankDbContext>();
 	}
 }

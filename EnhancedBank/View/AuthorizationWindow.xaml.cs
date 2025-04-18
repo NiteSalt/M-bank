@@ -24,7 +24,7 @@ public partial class AuthorizationWindow : Window
 		string login = usernameBox.Text;
 		string password = passwordBox.Text;
 
-		Employee? employee = App.Current.Db.Employees.Where(u => u.Name == password).Where(u => u.Password == password).FirstOrDefault();
+		Employee? employee = App.Current.Db.Employees.Where(u => u.Name == login).FirstOrDefault(u => u.Password == password);
 
 		if (employee is not null)
 		{
