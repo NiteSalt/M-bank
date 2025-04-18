@@ -2,7 +2,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Windows;
-using EnhancedBank.Model;
+using EnhancedBank.Models;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EnhancedBank;

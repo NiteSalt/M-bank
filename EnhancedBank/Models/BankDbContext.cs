@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace EnhancedBank.Model;
+namespace EnhancedBank.Models;
 
 public sealed class BankDbContext : DbContext
 {

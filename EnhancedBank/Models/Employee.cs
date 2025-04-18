@@ -1,4 +1,4 @@
-namespace EnhancedBank.Model;
+namespace EnhancedBank.Models;
 
 public class Employee
 {

@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using EnhancedBank.Model;
+using EnhancedBank.Models;
 
 namespace EnhancedBank.View;
 
@@ -32,7 +32,7 @@ public partial class MainWindow : Window
 	
 	private void OnAdministratorButtonClick(object sender, RoutedEventArgs e)
 	{
-		AuthorizationWindow authWindow = new(() => new AdminWindow());
+		AuthorizationWindow authWindow = new(() => new AdminWindow(), requireAdministrator: true);
 		Visibility = Visibility.Hidden;
 		authWindow.ShowDialog();
 		Visibility = Visibility.Visible;

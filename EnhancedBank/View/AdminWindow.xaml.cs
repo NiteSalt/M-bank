@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using EnhancedBank.Model;
 
 namespace EnhancedBank.View;
 

@@ -1,7 +1,4 @@
-using System.Windows;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace EnhancedBank.Model;
+namespace EnhancedBank.Models;
 
 public class MainWindowModel
 {
